@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emotion-detection-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emotion-detection-app
+  template:
+    metadata:
+      labels:
+        app: emotion-detection-app
+    spec:
+      containers:
+      - name: emotion-detection-app
+        image: gcr.io/[PROJECT_ID]/emotion-detection-app
+        ports:
+        - containerPort: 5000

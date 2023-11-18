@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Detection</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional CSS styles can be added here */
+        body {
+            padding: 20px;
+            background: url('../static/img.jpg') no-repeat center center fixed;
+            background-size: cover;
+            /* overflow: hidden; */
+        }
+        .container {
+            /* Ensure content stays in the center */
+            position: relative;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+        }
+        /* Customize styles as needed */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4">Emotion Detection</h1>
+        <!-- Responsive container for the video feed -->
+        <div class="embed-responsive embed-responsive-16by9">
+            <img class="embed-responsive-item" src="{{ url_for('video_feed') }}">
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS (optional, for some components) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
