@@ -42,7 +42,7 @@ def index():
     return render_template('index.html')
 
 def generate_frames():
-    video_capture = cv2.VideoCapture(1)
+    video_capture = cv2.VideoCapture(0)
     while True:
         ret, frame = video_capture.read()
         if not ret:

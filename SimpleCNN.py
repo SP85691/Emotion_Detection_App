@@ -23,7 +23,15 @@ class SimpleCNN(nn.Module):
 
 # Load the model weights (example)
 def load_model(model, checkpoint_path):
-    model.load_state_dict(torch.load(checkpoint_path))
+    # if GPU then load model with GPU else load model with CPU
+    if torch.cuda.is_available():
+        device = torch.device('cuda')
+        model.load_state_dict(torch.load(checkpoint_path))
+        print("Model is Currently using GPU")
+    else:
+        device = torch.device('cpu')
+        model.load_state_dict(torch.load(checkpoint_path, map_location=device))
+        print("Model is Currently using CPU")
     model.eval()
     return model
 
